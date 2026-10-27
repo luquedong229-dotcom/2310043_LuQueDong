@@ -64,23 +64,20 @@ Mở địa chỉ Local do Vite hiển thị trong terminal.
 
 ## 6. Các đường link tài nguyên
 
-- GitHub Repository: https://github.com/luquedong229-dotcom/2310043_LuQueDong
-- Docker Hub Backend: [Bổ sung sau khi tạo image]
-- Docker Hub Frontend: [Bổ sung sau khi tạo image]
-- Render App: [Bổ sung sau khi triển khai Frontend]
-- Render API: [Bổ sung sau khi triển khai Backend]
-- MongoDB Atlas: [Bổ sung link cluster hoặc trang quản lý phù hợp]
+- **GitHub Repository:** https://github.com/luquedong229-dotcom/2310043_LuQueDong
+- **Docker Hub Backend:** https://hub.docker.com/r/dong2310043/backend
+- **Docker Hub Frontend:** https://hub.docker.com/r/dong2310043/frontend
+- **Render App:** Bổ sung sau khi triển khai Frontend.
+- **Render API:** Bổ sung sau khi triển khai Backend.
+- **MongoDB Atlas:** https://cloud.mongodb.com/
 
-## 7. Lưu ý bảo mật
+## 7. Docker Hub – Backend
 
-Không đưa file `.env`, mật khẩu, token hoặc chuỗi kết nối MongoDB chứa thông tin xác thực lên GitHub.
-## Docker Hub – Backend
-
-- Docker Hub Repository: https://hub.docker.com/r/dong2310043/backend
-- Image tag: `dong2310043/backend:latest`
+- Repository: https://hub.docker.com/r/dong2310043/backend
+- Image: `dong2310043/backend:latest`
 - Version: `dong2310043/backend:1.0`
-- Backend port: `5000`
-- Health check endpoint: `/api/health`
+- Port: `5000`
+- Health check: `/api/health`
 
 Pull image:
 
@@ -88,8 +85,37 @@ Pull image:
 docker pull dong2310043/backend:latest
 ```
 
-Run container (provide your own environment variables in `backend/.env`):
+Run container:
 
 ```bash
 docker run -d --name hr-backend -p 5000:5000 --env-file ./backend/.env dong2310043/backend:latest
 ```
+
+## 8. Docker Hub – Frontend
+
+- Repository: https://hub.docker.com/r/dong2310043/frontend
+- Image: `dong2310043/frontend:latest`
+- Version: `dong2310043/frontend:1.0`
+- Port: `80`
+- Local URL: http://localhost:3001
+
+Pull image:
+
+```bash
+docker pull dong2310043/frontend:latest
+```
+
+Run container:
+
+```bash
+docker run -d --name hr-frontend -p 3001:80 dong2310043/frontend:latest
+```
+
+**Lưu ý:** Khi chạy Frontend trên môi trường triển khai, cần cấu hình `BACKEND_URL` trỏ đến Backend có thể truy cập được. `host.docker.internal` chỉ phù hợp cho thử nghiệm cục bộ trên Docker Desktop.
+
+## 9. Lưu ý bảo mật
+
+- Không commit file `.env` lên GitHub.
+- Không công khai mật khẩu, token hoặc chuỗi kết nối MongoDB có thông tin xác thực.
+- Chỉ chia sẻ các biến môi trường cần thiết qua cấu hình bảo mật của môi trường triển khai.
+
