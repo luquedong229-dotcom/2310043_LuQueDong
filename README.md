@@ -74,3 +74,22 @@ Mở địa chỉ Local do Vite hiển thị trong terminal.
 ## 7. Lưu ý bảo mật
 
 Không đưa file `.env`, mật khẩu, token hoặc chuỗi kết nối MongoDB chứa thông tin xác thực lên GitHub.
+## Docker Hub – Backend
+
+- Docker Hub Repository: https://hub.docker.com/r/dong2310043/backend
+- Image tag: `dong2310043/backend:latest`
+- Version: `dong2310043/backend:1.0`
+- Backend port: `5000`
+- Health check endpoint: `/api/health`
+
+Pull image:
+
+```bash
+docker pull dong2310043/backend:latest
+```
+
+Run container (provide your own environment variables in `backend/.env`):
+
+```bash
+docker run -d --name hr-backend -p 5000:5000 --env-file ./backend/.env dong2310043/backend:latest
+```
