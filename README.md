@@ -119,3 +119,7 @@ docker run -d --name hr-frontend -p 3001:80 dong2310043/frontend:latest
 - Không công khai mật khẩu, token hoặc chuỗi kết nối MongoDB có thông tin xác thực.
 - Chỉ chia sẻ các biến môi trường cần thiết qua cấu hình bảo mật của môi trường triển khai.
 
+## 10. Render Deployment
+
+- Frontend App: https://web-2310043.onrender.com
+- Backend API: <URL_BACKEND_RENDER_THẬT>
