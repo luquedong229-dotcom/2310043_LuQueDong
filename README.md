@@ -4,7 +4,7 @@
 
 - Họ và tên: Lư Quế Đông
 - MSSV: 2310043
-- Lớp: [Điền lớp của bạn]
+- Lớp: DH23TIN10
 
 ## 2. Mô tả dự án
 
