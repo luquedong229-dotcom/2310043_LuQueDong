@@ -14,21 +14,3 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the Oxlint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
-## Docker Hub Images
-
-### Backend
-- Docker Hub: https://hub.docker.com/r/dong2310043/backend
-- Tags: `latest`, `1.0`
-
-### Frontend
-- Docker Hub: https://hub.docker.com/r/dong2310043/frontend
-- Tags: `latest`, `1.0`
-
-### Run Frontend locally
-```bash
-docker run -d --name hr-frontend-test -p 3001:80 dong2310043/frontend:latest
-```
-
-Open: http://localhost:3001
-
-**Note:** For deployment, configure `BACKEND_URL` to point to a reachable Backend API address. `host.docker.internal` is intended for local Docker Desktop testing, not public deployment.

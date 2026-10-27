@@ -2,8 +2,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
-const API_URL = "/api/employees";
-
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
 const emptyForm = {
   employeeId: "",
   fullName: "",
